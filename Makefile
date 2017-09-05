@@ -1,0 +1,5 @@
+
+all: ts
+
+ts:
+	tsc

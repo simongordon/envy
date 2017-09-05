@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Envy",
+    "version": "0.0.1",
+    "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*", "file://*/*"],
+        "js": [
+            "target/main.js"
+            ],
+        "run_at": "document_end"
+    }
+    ]
+}
