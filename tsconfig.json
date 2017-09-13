@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outFile": "target/main.js"
+        "outDir": "target"
     },
     "include": [
         "src/*"

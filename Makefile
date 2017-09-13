@@ -6,6 +6,8 @@ ts:
 pug:
 	pug src --out target
 
+install: install-ts install-pug
+
 install-ts:
 	npm install -g typescript
 

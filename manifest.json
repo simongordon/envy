@@ -3,20 +3,25 @@
     "name": "envy",
     "version": "0.0.1",
     "content_scripts": [
-    {
-        "matches": ["http://*/*", "https://*/*", "file://*/*"],
-        "js": [
-            "target/main.js"
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "file://*/*"
             ],
-        "run_at": "document_end"
-    }
+            "js": [
+                "target/main.js"
+                // "target/popup.js"
+            ],
+            "run_at": "document_end"
+        }
     ],
-  "browser_action": {
-    "default_icon": "envy-48.png",
-    "default_popup": "target/popup.html"
-   },
-   "icons": {
-    "128": "envy-128.png",
-    "48": "envy-48.png"
-   }
+    "browser_action": {
+        "default_icon": "envy-48.png",
+        "default_popup": "target/popup.html"
+    },
+    "icons": {
+        "128": "envy-128.png",
+        "48": "envy-48.png"
+    }
 }

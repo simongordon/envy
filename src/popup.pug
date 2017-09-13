@@ -2,5 +2,17 @@
 html
     head
         title Envy
+        
+        //- script
+        //-     include ../target/popup.js
     body
         h1 henlo!
+        div
+            ul#envs
+            p
+                label(for="new")
+                input#txtNew(type="text", name="new")
+            p
+                button#btnAdd Click me!
+
+        script(src='/target/popup.js')
