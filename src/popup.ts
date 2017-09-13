@@ -12,18 +12,31 @@ function addListItem(newItem: string) {
     list.appendChild(newListItem);
 }
 
-function addToStorage(newItem: string) {
-    var stuff: string[] = localStorage['stuff'];
-    stuff.concat(newItem);
+function getStorage(): string[] {
+    let fromStorage = localStorage.getItem('stuff');
+    if (fromStorage == null) {
+        fromStorage = '["a"]';
+    }
+ //|| ["initial", "yeah"]
+    let meems: string[] = JSON.parse(fromStorage);
+    return meems;
 }
+
+function addToStorage(newItem: string) {
+    var storage = getStorage();
+    storage.push(newItem);
+    localStorage.setItem('stuff', JSON.stringify(storage));
+}
+
 
 //problems here
 
-let meemz: string[] = JSON.parse(localStorage['stuff']);
-if (meemz == null || meemz.length == 0) {
-    meemz = ["initial", "yeah"];
-    localStorage['stuff'] = meemz;
-}
+//let meemz: string[] = JSON.parse(localStorage['stuff']);
+//if (meemz == null || meemz.length == 0) {
+    //meemz = ["initial", "yeah"];
+    //localStorage['stuff'] = meemz;
+//}
+let meemz = getStorage();
 meemz.forEach(element => {
     addListItem(element)
 });
